@@ -247,7 +247,7 @@
       List<Product[]> list = new();
 
       // Write Query Syntax Here
-      
+      list = (from product in products select product).Chunk(5).ToList();
 
       return list;
     }
@@ -259,13 +259,13 @@
     /// </summary>
     public List<Product[]> ChunkMethod()
     {
-      List<Product> products = GetProducts();
-      List<Product[]> list = new();
+        List<Product> products = GetProducts();
+        // Write Method Syntax Here
 
-      // Write Method Syntax Here
-      
+        var list =
+            products.Chunk(5).ToList();
 
-      return list;
+        return list;
     }
     #endregion
   }
